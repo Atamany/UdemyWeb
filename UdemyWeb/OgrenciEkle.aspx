@@ -1,0 +1,45 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Ogretmen.master" AutoEventWireup="true" CodeFile="OgrenciEkle.aspx.cs" Inherits="OgrenciEkle" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
+    <form id="Form1" runat="server">
+        <h1>Öğrenci Ekleme Paneli</h1><br /><br />
+        <div class="form-group">
+            <asp:Label for="TxtOgrAd" runat="server" Text="Ad" />
+            <asp:TextBox ID="TxtOgrAd" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+
+        <div class="form-group">
+            <asp:Label for="TxtOgrSoyad" runat="server" Text="Soyad" />
+            <asp:TextBox ID="TxtOgrSoyad" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+
+        <div class="form-group">
+            <asp:Label for="TxtOgrTelefon" runat="server" Text="Telefon" />
+            <asp:TextBox ID="TxtOgrTelefon" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+
+        <div class="form-group">
+            <asp:Label for="TxtOgrMail" runat="server" Text="E-Posta" />
+            <asp:TextBox ID="TxtOgrMail" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+
+        <div class="form-group">
+            <asp:Label for="TxtOgrSifre" runat="server" Text="Şifre" />
+            <asp:TextBox ID="TxtOgrSifre" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+        <div class="form-group">
+            <asp:Label for="TxtOgrFotograf" runat="server" Text="Fotoğraf URL" />
+            <asp:TextBox ID="TxtOgrFotograf" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+        <asp:Button ID="Button1" runat="server" Text="Kaydet" CssClass="btn btn-info" OnClick="Button1_Click" />
+    </form>
+</asp:Content>
+
