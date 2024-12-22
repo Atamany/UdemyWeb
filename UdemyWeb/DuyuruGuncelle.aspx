@@ -5,12 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
         <form id="Form1" runat="server">
     <h1>Duyuru Güncelleme Paneli</h1><br /><br />
-    <div class="form-group">
-        <asp:Label for="TxtDuyuruId" runat="server" Text="ID" />
-        <asp:TextBox ID="TxtDuyuruId" runat="server" CssClass="form-control"></asp:TextBox>
-    </div>
-    <br />
-
+    
     <div class="form-group">
         <asp:Label for="TxtDuyuruBaslik" runat="server" Text="Başlık" />
         <asp:TextBox ID="TxtDuyuruBaslik" runat="server" CssClass="form-control" />
