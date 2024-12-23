@@ -4,7 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
     <form id="Form1" runat="server">
-        <h1>Öğrenci Ekleme Paneli</h1><br /><br />
+        <h1>Öğrenci Ekleme Paneli</h1>
+        <br />
+        <br />
         <div class="form-group">
             <asp:Label for="TxtOgrAd" runat="server" Text="Ad" />
             <asp:TextBox ID="TxtOgrAd" runat="server" CssClass="form-control" />
@@ -14,6 +16,15 @@
         <div class="form-group">
             <asp:Label for="TxtOgrSoyad" runat="server" Text="Soyad" />
             <asp:TextBox ID="TxtOgrSoyad" runat="server" CssClass="form-control" />
+        </div>
+        <br />
+
+        <div class="form-group">
+            <asp:Label runat="server" Text="Cinsiyet" CssClass="form-label"></asp:Label>
+            <div>
+                <asp:RadioButton ID="TxtOgrCinsiyetE" runat="server" Text="Erkek" GroupName="Cinsiyet" CssClass="form-control" />
+                <asp:RadioButton ID="TxtOgrCinsiyetK" runat="server" Text="Kız" GroupName="Cinsiyet" CssClass="form-control" />
+            </div>
         </div>
         <br />
 

@@ -22,6 +22,15 @@
         <br />
 
         <div class="form-group">
+            <asp:Label runat="server" Text="Cinsiyet" CssClass="form-label"></asp:Label>
+            <div>
+                <asp:RadioButton ID="TxtOgrCinsiyetE" runat="server" Text="Erkek" GroupName="Cinsiyet" CssClass="form-control" />
+                <asp:RadioButton ID="TxtOgrCinsiyetK" runat="server" Text="Kız" GroupName="Cinsiyet" CssClass="form-control" />
+            </div>
+        </div>
+        <br />
+
+        <div class="form-group">
             <asp:Label for="TxtOgrTelefon" runat="server" Text="Telefon" />
             <asp:TextBox ID="TxtOgrTelefon" runat="server" CssClass="form-control" />
         </div>

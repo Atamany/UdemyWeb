@@ -17,8 +17,17 @@ public partial class OgrenciGuncelle : System.Web.UI.Page
             {
                 id = Convert.ToInt32(Request.QueryString["OgrId"].ToString());
                 DataSetTableAdapters.Tbl_OgrenciTableAdapter dt = new DataSetTableAdapters.Tbl_OgrenciTableAdapter();
+                string cinsiyet = dt.OgrenciSec(id)[0].OgrCinsiyet;
                 TxtOgrAd.Text = dt.OgrenciSec(id)[0].OgrAd;
                 TxtOgrSoyad.Text = dt.OgrenciSec(id)[0].OgrSoyad;
+                if (cinsiyet == "Erkek")
+                {
+                    TxtOgrCinsiyetE.Checked = true;
+                }
+                else if (cinsiyet == "Kız")
+                {
+                    TxtOgrCinsiyetK.Checked = true;
+                }
                 TxtOgrTelefon.Text = dt.OgrenciSec(id)[0].OgrTelefon;
                 TxtOgrMail.Text = dt.OgrenciSec(id)[0].OgrMail;
                 TxtOgrSifre.Text = dt.OgrenciSec(id)[0].OgrSifre;
@@ -36,7 +45,8 @@ public partial class OgrenciGuncelle : System.Web.UI.Page
     protected void Button1_Click(object sender, EventArgs e)
     {
         DataSetTableAdapters.Tbl_OgrenciTableAdapter dt = new DataSetTableAdapters.Tbl_OgrenciTableAdapter();
-        dt.OgrenciGuncelle(TxtOgrAd.Text, TxtOgrSoyad.Text, TxtOgrTelefon.Text, TxtOgrMail.Text, TxtOgrSifre.Text, TxtOgrFotograf.Text, Convert.ToInt32(Request.QueryString["OgrId"].ToString()));
+        string cinsiyet = TxtOgrCinsiyetE.Checked ? "Erkek" : TxtOgrCinsiyetK.Checked ? "Kız" : null;
+        dt.OgrenciGuncelle(TxtOgrAd.Text, TxtOgrSoyad.Text,cinsiyet, TxtOgrTelefon.Text, TxtOgrMail.Text, TxtOgrSifre.Text, TxtOgrFotograf.Text, Convert.ToInt32(Request.QueryString["OgrId"].ToString()));
         Response.Redirect("Default.aspx");
     }
 }
