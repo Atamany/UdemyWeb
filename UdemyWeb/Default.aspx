@@ -6,6 +6,7 @@
     <table class="table table-bordered table-hover">
         <tr>
             <th scope="col">ID</th>
+            <th scope="col">Numara</th>
             <th scope="col">Ad</th>
             <th scope="col">Soyad</th>
             <th scope="col">Cinsiyet</th>
@@ -19,6 +20,7 @@
                 <ItemTemplate>
                     <tr>
                         <td><%# Eval("OgrId") %></td>
+                        <td><%# Eval("Numara") %></td>
                         <td><%# Eval("OgrAd") %></td>
                         <td><%# Eval("OgrSoyad") %></td>
                         <td><%# Eval("OgrCinsiyet") %></td>

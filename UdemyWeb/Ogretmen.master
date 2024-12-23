@@ -36,20 +36,47 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li><a href="Default.aspx"><i class="glyphicon glyphicon-list"></i>Öğrenci Listesi</a></li>
-                        <li><a href="OgrenciEkle.aspx"><i class="glyphicon glyphicon-adjust "></i>Öğrenci Ekle</a></li>
+                        <li><a href="OgrenciEkle.aspx"><i class="glyphicon glyphicon-plus "></i>Öğrenci Ekle</a></li>
                         <li><a href="OgrenciBul.aspx"><i class="glyphicon glyphicon-search"></i>Öğrenci Bul</a></li>
 
                     </ul>
                 </li>
-                <li>
-                    <a href="DersListesi.aspx">
+
+                <li class="active">
+                    <a href="#homeSubmenu10" data-toggle="collapse" aria-expanded="false">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Öğretmen Listesi
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu10">
+                        <li><a href="OgretmenListesi.aspx"><i class="glyphicon glyphicon-list"></i>Öğretmen Listesi</a></li>
+                        <li><a href="OgretmenEkle.aspx"><i class="glyphicon glyphicon-plus "></i>Öğretmen Ekle</a></li>
+                    </ul>
+                </li>
+
+                <li class="active">
+                    <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-briefcase"></i>
                         Dersler
                     </a>
-                    <a href="#">
+                    <ul class="collapse list-unstyled" id="homeSubmenu4">
+                        <li><a href="DersListesi.aspx"><i class="glyphicon glyphicon-download"></i>Ders Listesi</a></li>
+                        <li><a href="DersEkle.aspx"><i class="glyphicon glyphicon-plus "></i>Ders Ekle</a></li>
+
+                    </ul>
+
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-calendar"></i>
                         Mesajlar
                     </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu3">
+                        <li><a href="GelenMesajlar.aspx"><i class="glyphicon glyphicon-download"></i>Gelen Kutusu</a></li>
+                        <li><a href="GidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Kutusu</a></li>
+                        <li><a href="MesajYaz.aspx"><i class="glyphicon glyphicon-pencil"></i>Yeni Mesaj</a></li>
+
+                    </ul>
+
                 </li>
                 <li class="active">
                     <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false">
@@ -62,35 +89,52 @@
 
                     </ul>
                 </li>
-                <li>
-                    <a href="NotListesi.aspx">
+                <li class="active">
+                    <a href="#homeSubmenu5" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-book"></i>
                         Notlar
                     </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu5">
+                        <li><a href="NotListesi.aspx"><i class="glyphicon glyphicon-book"></i>Not Listesi</a></li>
+
+                    </ul>
+
                 </li>
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="#homeSubmenu6" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-blackboard"></i>
                         İstatistikler
                     </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu6">
+                        <li><a href="#"><i class="glyphicon glyphicon-blackboard"></i>İstatistikler</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="Grafikler.aspx">
+                <li class="active">
+                    <a href="#homeSubmenu7" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-dashboard"></i>
                         Grafikler
                     </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu7">
+                        <li><a href="Grafikler.aspx"><i class="glyphicon glyphicon-dashboard"></i>Grafikler</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="#homeSubmenu8" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-picture"></i>
                         Galeri
                     </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu8">
+                        <li><a href="#"><i class="glyphicon glyphicon-picture"></i>Galeri</a></li>
+                    </ul>
                 </li>
-                <li>
-                    <a href="#">
+                <li class="active">
+                    <a href="#homeSubmenu9" data-toggle="collapse" aria-expanded="false">
                         <i class="glyphicon glyphicon-edit"></i>
                         Ayarlar
                     </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu9">
+                        <li><a href="#"><i class="glyphicon glyphicon-eye-close"></i>Çıkış Yap</a></li>
+                    </ul>
                 </li>
             </ul>
         </nav>

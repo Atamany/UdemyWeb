@@ -17,6 +17,15 @@ public partial class OgrenciEkle : System.Web.UI.Page
         DataSetTableAdapters.Tbl_OgrenciTableAdapter dt = new DataSetTableAdapters.Tbl_OgrenciTableAdapter();
         string cinsiyet = TxtOgrCinsiyetE.Checked ? "Erkek" : TxtOgrCinsiyetK.Checked ? "Kız" : null;
         dt.OgrenciEkle(TxtOgrAd.Text, TxtOgrSoyad.Text, cinsiyet, TxtOgrTelefon.Text, TxtOgrMail.Text, TxtOgrSifre.Text, TxtOgrFotograf.Text,true);
+
+        var ogrenciListesi = dt.OgrenciListesi();
+        var yeniOgrenci = ogrenciListesi.OrderByDescending(o => o.OgrId).FirstOrDefault();
+
+        int id = yeniOgrenci.OgrId;
+        string numara = Convert.ToString(id + 1000);
+        
+
+        dt.OgrenciGuncelle(numara, TxtOgrAd.Text, TxtOgrSoyad.Text, cinsiyet, TxtOgrTelefon.Text, TxtOgrMail.Text, TxtOgrSifre.Text, TxtOgrFotograf.Text, id);
         Response.Redirect("Default.aspx");
     }
 }

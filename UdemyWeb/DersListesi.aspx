@@ -24,7 +24,5 @@
             </asp:Repeater>
         </tbody>
     </table>
-    <asp:HyperLink ID="HyperLink3" runat="server" CssClass="btn btn-info" NavigateUrl="~/DersEkle.aspx">Ders Ekle</asp:HyperLink>
-
 </asp:Content>
 

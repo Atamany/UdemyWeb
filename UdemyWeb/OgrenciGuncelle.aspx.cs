@@ -46,7 +46,7 @@ public partial class OgrenciGuncelle : System.Web.UI.Page
     {
         DataSetTableAdapters.Tbl_OgrenciTableAdapter dt = new DataSetTableAdapters.Tbl_OgrenciTableAdapter();
         string cinsiyet = TxtOgrCinsiyetE.Checked ? "Erkek" : TxtOgrCinsiyetK.Checked ? "Kız" : null;
-        dt.OgrenciGuncelle(TxtOgrAd.Text, TxtOgrSoyad.Text,cinsiyet, TxtOgrTelefon.Text, TxtOgrMail.Text, TxtOgrSifre.Text, TxtOgrFotograf.Text, Convert.ToInt32(Request.QueryString["OgrId"].ToString()));
+        dt.OgrenciGuncelle((Convert.ToInt32(Request.QueryString["OgrId"].ToString()) + 1000).ToString(), TxtOgrAd.Text, TxtOgrSoyad.Text, cinsiyet, TxtOgrTelefon.Text, TxtOgrMail.Text, TxtOgrSifre.Text, TxtOgrFotograf.Text, Convert.ToInt32(Request.QueryString["OgrId"].ToString()));
         Response.Redirect("Default.aspx");
     }
 }
