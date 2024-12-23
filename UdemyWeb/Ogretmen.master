@@ -72,8 +72,8 @@
                     </a>
                     <ul class="collapse list-unstyled" id="homeSubmenu3">
                         <li><a href="GelenMesajlar.aspx"><i class="glyphicon glyphicon-download"></i>Gelen Kutusu</a></li>
-                        <li><a href="GidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Kutusu</a></li>
-                        <li><a href="MesajYaz.aspx"><i class="glyphicon glyphicon-pencil"></i>Yeni Mesaj</a></li>
+<%--                        <li><a href="GidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Kutusu</a></li>--%>
+                        <li><a href="MesajOlustur.aspx"><i class="glyphicon glyphicon-pencil"></i>Yeni Mesaj</a></li>
 
                     </ul>
 

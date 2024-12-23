@@ -10,6 +10,7 @@
             <th scope="col">Alıcı</th>
             <th scope="col">Başlık</th>
             <th scope="col">İçerik</th>
+            <th scope="col">Tarih</th>
             <th scope="col">İşlemler</th>
         </tr>
         <tbody>
@@ -21,6 +22,7 @@
                         <td><%# Eval("Alici") %></td>
                         <td><%# Eval("Baslik") %></td>
                         <td><%# Eval("Icerik") %></td>
+                        <td><%# Eval("Tarih") %></td>
                         <td>
                             <asp:HyperLink ID="HyperLink1" NavigateUrl='<%#"~/MesajSil.aspx?MesajId="+Eval("MesajId")%>' runat="server" CssClass="btn btn-danger">Sil</asp:HyperLink>
                             <asp:HyperLink ID="HyperLink2" NavigateUrl='<%#"~/MesajGuncelle.aspx?MesajId="+Eval("MesajId")%>' runat="server" CssClass="btn btn-success">Güncelle</asp:HyperLink>
