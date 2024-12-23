@@ -7,12 +7,13 @@
 <DiagramLayout xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ex:showrelationlabel="False" ViewPortX="0" ViewPortY="32" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:Tbl_Ogrenci" ZOrder="2" X="723" Y="215" Height="62" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="145" OldDataTableHeight="191" SplitterPosition="28" />
-    <Shape ID="DesignTable:Tbl_Duyurular" ZOrder="1" X="358" Y="42" Height="179" Width="300" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="28" OldDataTableHeight="145" SplitterPosition="28" />
-    <Shape ID="DesignTable:Tbl_Ogretmen" ZOrder="4" X="1083" Y="177" Height="62" Width="268" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="53" OldDataTableHeight="145" SplitterPosition="28" />
-    <Shape ID="DesignTable:OgrNotlar" ZOrder="3" X="578" Y="358" Height="342" Width="300" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
+    <Shape ID="DesignTable:Tbl_Duyurular" ZOrder="3" X="358" Y="42" Height="62" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="145" OldDataTableHeight="145" SplitterPosition="28" />
+    <Shape ID="DesignTable:Tbl_Ogretmen" ZOrder="6" X="1083" Y="177" Height="62" Width="268" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="53" OldDataTableHeight="145" SplitterPosition="28" />
+    <Shape ID="DesignTable:OgrNotlar" ZOrder="5" X="578" Y="358" Height="62" Width="300" AdapterExpanded="false" DataTableExpanded="false" OldAdapterHeight="99" OldDataTableHeight="237" SplitterPosition="28" />
+    <Shape ID="DesignTable:Tbl_Dersler" ZOrder="1" X="238" Y="330" Height="179" Width="284" AdapterExpanded="true" DataTableExpanded="false" OldAdapterHeight="28" OldDataTableHeight="99" SplitterPosition="28" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK_Tbl_Duyurular_Tbl_Ogretmen" ZOrder="5" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Tbl_Duyurular_Tbl_Ogretmen" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>1083</X>
@@ -24,6 +25,22 @@
         </Point>
         <Point>
           <X>641</X>
+          <Y>104</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_Tbl_Ogretmen_Tbl_Dersler" ZOrder="4" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>469</X>
+          <Y>330</Y>
+        </Point>
+        <Point>
+          <X>469</X>
+          <Y>221</Y>
+        </Point>
+        <Point>
+          <X>1083</X>
           <Y>221</Y>
         </Point>
       </RoutePoints>

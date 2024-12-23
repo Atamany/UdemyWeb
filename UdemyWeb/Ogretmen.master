@@ -42,7 +42,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="DersListesi.aspx">
                         <i class="glyphicon glyphicon-briefcase"></i>
                         Dersler
                     </a>
