@@ -1,0 +1,1147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet" targetNamespace="http://tempuri.org/DataSet.xsd" xmlns:mstns="http://tempuri.org/DataSet.xsd" xmlns="http://tempuri.org/DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="UdemySiteDbConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="UdemySiteDbConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.UdemySiteDbConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection ConnectionStringObject="Data Source=YIGITATAMANPC;Initial Catalog=UdemySiteDb;Integrated Security=True;TrustServerCertificate=True" IsAppSettingsProperty="false" Modifier="Assembly" Name="UdemySiteDbConnectionString (UdemyWeb)" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_OgrenciTableAdapter" GeneratorDataComponentClassName="Tbl_OgrenciTableAdapter" Name="Tbl_Ogrenci" UserDataComponentName="Tbl_OgrenciTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillOgrenciListesi" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="OgrenciListesi" GeneratorSourceName="FillOgrenciListesi" GetMethodModifier="Public" GetMethodName="OgrenciListesi" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="OgrenciListesi" UserSourceName="FillOgrenciListesi">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT *
+
+FROM Tbl_Ogrenci
+
+Inner Join Tbl_Fakulte
+On Tbl_Fakulte.FakulteId = Tbl_Ogrenci.OgrFakulte
+Inner Join Tbl_Bolum
+On Tbl_Bolum.BolumId = Tbl_Ogrenci.OgrBolum
+Where Tbl_Ogrenci.Durum='True'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OgrId" DataSetColumn="OgrId" />
+              <Mapping SourceColumn="OgrenciTC" DataSetColumn="OgrenciTC" />
+              <Mapping SourceColumn="OgrAd" DataSetColumn="OgrAd" />
+              <Mapping SourceColumn="OgrSoyad" DataSetColumn="OgrSoyad" />
+              <Mapping SourceColumn="OgrCinsiyet" DataSetColumn="OgrCinsiyet" />
+              <Mapping SourceColumn="OgrTelefon" DataSetColumn="OgrTelefon" />
+              <Mapping SourceColumn="OgrMail" DataSetColumn="OgrMail" />
+              <Mapping SourceColumn="OgrSifre" DataSetColumn="OgrSifre" />
+              <Mapping SourceColumn="FakulteAd" DataSetColumn="FakulteAd" />
+              <Mapping SourceColumn="BolumAd" DataSetColumn="BolumAd" />
+              <Mapping SourceColumn="OgrFakulte" DataSetColumn="OgrFakulte" />
+              <Mapping SourceColumn="OgrBolum" DataSetColumn="OgrBolum" />
+              <Mapping SourceColumn="Durum" DataSetColumn="Durum" />
+              <Mapping SourceColumn="FakulteId" DataSetColumn="FakulteId" />
+              <Mapping SourceColumn="Durum1" DataSetColumn="Durum1" />
+              <Mapping SourceColumn="BolumId" DataSetColumn="BolumId" />
+              <Mapping SourceColumn="Fakulte" DataSetColumn="Fakulte" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="UdemySiteDb.dbo.Tbl_Ogrenci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillOgrenci" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgrenciSec" GeneratorSourceName="FillOgrenci" GetMethodModifier="Public" GetMethodName="OgrenciSec" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgrenciSec" UserSourceName="FillOgrenci">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT OgrId, OgrenciTC, OgrAd, OgrSoyad, OgrCinsiyet, OgrTelefon, OgrMail, OgrSifre, OgrFakulte, OgrBolum
+
+FROM Tbl_Ogrenci
+
+Where (Durum='True') AND (OgrId = @OgrId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrId" ColumnName="OgrId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="UdemySiteDb.dbo.Tbl_Ogrenci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillOgrenciPaneli" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgrenciPaneliGetir" GeneratorSourceName="FillOgrenciPaneli" GetMethodModifier="Public" GetMethodName="OgrenciPaneliGetir" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgrenciPaneliGetir" UserSourceName="FillOgrenciPaneli">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT OgrId, OgrenciTC, OgrAd, OgrSoyad, OgrCinsiyet, OgrTelefon, OgrMail, OgrSifre, OgrFakulte, OgrBolum
+
+FROM Tbl_Ogrenci
+
+Where OgrId=@OgrId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrId" ColumnName="OgrId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciEkle" Modifier="Public" Name="OgrenciEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="OgrenciEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Ogrenci] ([OgrenciTC], [OgrAd], [OgrSoyad], [OgrCinsiyet], [OgrTelefon], [OgrMail], [OgrSifre],[OgrFakulte], [OgrBolum], [Durum]) VALUES (@OgrenciTC, @OgrAd, @OgrSoyad, @OgrCinsiyet, @OgrTelefon, @OgrMail, @OgrSifre, @OgrFakulte, @OgrBolum, 'true') SELECT SCOPE_IDENTITY();</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrenciTC" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrenciTC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrSoyad" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrSoyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrCinsiyet" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrCinsiyet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrTelefon" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrTelefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrMail" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrMail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OgrFakulte" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OgrFakulte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OgrBolum" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OgrBolum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciGuncelle" Modifier="Public" Name="OgrenciGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="OgrenciGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Ogrenci] SET [OgrenciTC] = @OgrenciTC, [OgrAd] = @OgrAd, [OgrSoyad] = @OgrSoyad, [OgrCinsiyet] = @OgrCinsiyet, [OgrTelefon] = @OgrTelefon, [OgrMail] = @OgrMail, [OgrSifre] = @OgrSifre, [OgrFakulte] = @OgrFakulte, [OgrBolum] = @OgrBolum WHERE (([OgrId] = @OgrId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrenciTC" ColumnName="OgrenciTC" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(11)" DbType="AnsiString" Direction="Input" ParameterName="@OgrenciTC" Precision="0" ProviderType="VarChar" Scale="0" Size="11" SourceColumn="OgrenciTC" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrAd" ColumnName="OgrAd" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@OgrAd" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="OgrAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrSoyad" ColumnName="OgrSoyad" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@OgrSoyad" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="OgrSoyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrCinsiyet" ColumnName="OgrCinsiyet" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@OgrCinsiyet" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="OgrCinsiyet" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrTelefon" ColumnName="OgrTelefon" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@OgrTelefon" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="OgrTelefon" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrMail" ColumnName="OgrMail" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrMail" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrMail" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrSifre" ColumnName="OgrSifre" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrFakulte" ColumnName="OgrFakulte" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrFakulte" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrFakulte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrBolum" ColumnName="OgrBolum" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrBolum" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrBolum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrId" ColumnName="OgrId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciSifreGuncelle" Modifier="Public" Name="OgrenciSifreGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="OgrenciSifreGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Ogrenci] Set [OgrSifre] = @OgrSifre WHERE (([OgrId] = @OgrId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrSifre" ColumnName="OgrSifre" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrId" ColumnName="OgrId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgrenciSil" Modifier="Public" Name="OgrenciSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="OgrenciSil">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Ogrenci] SET Durum='False' WHERE (([OgrId] = @OgrId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrId" ColumnName="OgrId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogrenci" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OgrNotlarTableAdapter" GeneratorDataComponentClassName="OgrNotlarTableAdapter" Name="OgrNotlar" UserDataComponentName="OgrNotlarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.OgrNotlar" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillProsedur" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="NotlariGetir" GeneratorSourceName="FillProsedur" GetMethodModifier="Public" GetMethodName="NotlariGetir" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="NotlariGetir" UserSourceName="FillProsedur">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.OgrNotlar</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="NotId" DataSetColumn="NotId" />
+              <Mapping SourceColumn="OgrenciId" DataSetColumn="OgrenciId" />
+              <Mapping SourceColumn="Ogrenci" DataSetColumn="Ogrenci" />
+              <Mapping SourceColumn="DersAd" DataSetColumn="DersAd" />
+              <Mapping SourceColumn="Sinav1" DataSetColumn="Sinav1" />
+              <Mapping SourceColumn="Sinav2" DataSetColumn="Sinav2" />
+              <Mapping SourceColumn="Sinav3" DataSetColumn="Sinav3" />
+              <Mapping SourceColumn="Ortalama" DataSetColumn="Ortalama" />
+              <Mapping SourceColumn="NotDurum" DataSetColumn="NotDurum" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByOgrNotu" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgrenciNotu" GeneratorSourceName="FillByOgrNotu" GetMethodModifier="Public" GetMethodName="OgrenciNotu" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgrenciNotu" UserSourceName="FillByOgrNotu">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select OgrenciId,DersAd,Sinav1,Sinav2,Sinav3,Ortalama,NotDurum From Tbl_Notlar
+Inner Join Tbl_Ogrenci
+ON Tbl_Ogrenci.OgrId=Tbl_Notlar.OgrenciId
+Inner Join Tbl_Dersler
+On Tbl_Dersler.DersId=Tbl_Notlar.DersId Where OgrenciId = (Select OgrId From Tbl_Ogrenci Where OgrId=@OgrId)
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrId" ColumnName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrId" Precision="0" Scale="0" Size="4" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillNotGetir2" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="NotGetir2" GeneratorSourceName="FillNotGetir2" GetMethodModifier="Public" GetMethodName="NotGetir2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="NotGetir2" UserSourceName="FillNotGetir2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>Select NotId,OgrenciId,(OgrAd + ' ' + OgrSoyad) AS 'Ogrenci',DersAd,Sinav1,Sinav2,Sinav3,Ortalama,NotDurum From Tbl_Notlar
+Inner Join Tbl_Ogrenci
+ON Tbl_Ogrenci.OgrId=Tbl_Notlar.OgrenciId
+Inner Join Tbl_Dersler
+On Tbl_Dersler.DersId=Tbl_Notlar.DersId
+Where NotId=@NotId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="NotId" ColumnName="NotId" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@NotId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="NotId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NotEkle" Modifier="Public" Name="NotEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="NotEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Notlar] ([OgrenciId], [DersId], [Sinav1], [Sinav2], [Sinav3], [Ortalama],[NotDurum]) VALUES (@OgrenciId, @DersId, @Sinav1, @Sinav2, @Sinav3, @Ortalama, @NotDurum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrenciId" ColumnName="OgrenciId" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrenciId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrenciId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DersId" ColumnName="DersId" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DersId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DersId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sinav1" ColumnName="Sinav1" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Sinav1" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="Sinav1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sinav2" ColumnName="Sinav2" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Sinav2" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="Sinav2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sinav3" ColumnName="Sinav3" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Sinav3" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="Sinav3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Ortalama" ColumnName="Ortalama" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="decimal(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@Ortalama" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="Ortalama" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NotDurum" ColumnName="NotDurum" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@NotDurum" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="NotDurum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="NotGuncelle" Modifier="Public" Name="NotGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="NotGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE Tbl_Notlar Set Sinav1=@Sinav1 , Sinav2=@Sinav2  , Sinav3=@Sinav3  , Ortalama=@Ortalama  , NotDurum=@NotDurum
+Where NotId=@NotId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sinav1" ColumnName="Sinav1" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Sinav1" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="Sinav1" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sinav2" ColumnName="Sinav2" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Sinav2" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="Sinav2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Sinav3" ColumnName="Sinav3" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="tinyint" DbType="Byte" Direction="Input" ParameterName="@Sinav3" Precision="0" ProviderType="TinyInt" Scale="0" Size="1" SourceColumn="Sinav3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Ortalama" ColumnName="Ortalama" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="decimal(18, 2)" DbType="Decimal" Direction="Input" ParameterName="@Ortalama" Precision="18" ProviderType="Decimal" Scale="2" Size="9" SourceColumn="Ortalama" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NotDurum" ColumnName="NotDurum" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@NotDurum" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="NotDurum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="NotId" ColumnName="NotId" DataSourceName="UdemySiteDb.dbo.Tbl_Notlar" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@NotId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="NotId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_OgretmenTableAdapter" GeneratorDataComponentClassName="Tbl_OgretmenTableAdapter" Name="Tbl_Ogretmen" UserDataComponentName="Tbl_OgretmenTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Ogretmen" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillOgretmen" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgretmenListesi" GeneratorSourceName="FillOgretmen" GetMethodModifier="Public" GetMethodName="OgretmenListesi" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="OgretmenListesi" UserSourceName="FillOgretmen">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tbl_Ogretmen] WHERE (([OgrtId] = @Original_OgrtId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OgrtId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OgrtId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tbl_Ogretmen] ([OgrtAdSoyad], [OgrtBrans], [OgrtSifre], [Durum]) VALUES (@OgrtAdSoyad, @OgrtBrans, @OgrtSifre, @Durum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrtAdSoyad" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrtAdSoyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OgrtBrans" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OgrtBrans" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrtSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrtSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Tbl_Ogretmen.*
+FROM     Tbl_Ogretmen
+Where Durum='True'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tbl_Ogretmen] SET [OgrtAdSoyad] = @OgrtAdSoyad, [OgrtBrans] = @OgrtBrans, [OgrtSifre] = @OgrtSifre, [Durum] = @Durum WHERE (([OgrtId] = @Original_OgrtId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrtAdSoyad" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrtAdSoyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@OgrtBrans" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OgrtBrans" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OgrtSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OgrtSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_OgrtId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OgrtId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="OgrtId" DataSetColumn="OgrtId" />
+              <Mapping SourceColumn="OgrtAdSoyad" DataSetColumn="OgrtAdSoyad" />
+              <Mapping SourceColumn="OgrtBrans" DataSetColumn="OgrtBrans" />
+              <Mapping SourceColumn="OgrtSifre" DataSetColumn="OgrtSifre" />
+              <Mapping SourceColumn="Durum" DataSetColumn="Durum" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.OgrtDersler" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillOgretmenListele" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgretmenListele" GeneratorSourceName="FillOgretmenListele" GetMethodModifier="Public" GetMethodName="OgretmenListele" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgretmenListele" UserSourceName="FillOgretmenListele">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.OgrtDersler</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Ogretmen" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillOgretmenSec" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgretmenSec" GeneratorSourceName="FillOgretmenSec" GetMethodModifier="Public" GetMethodName="OgretmenSec" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgretmenSec" UserSourceName="FillOgretmenSec">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT OgrtId, OgrtAdSoyad, OgrtBrans, OgrtSifre FROM Tbl_Ogretmen WHERE (Durum = 'True') AND (OgrtId = @OgrtId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrtId" ColumnName="OgrtId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrtId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrtId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgretmenEkle" Modifier="Public" Name="OgretmenEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="OgretmenEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Ogretmen] ([OgrtAdSoyad], [OgrtBrans], [OgrtSifre], [Durum]) VALUES (@OgrtAdSoyad, @OgrtBrans, @OgrtSifre, 'true')</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrtAdSoyad" ColumnName="OgrtAdSoyad" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrtAdSoyad" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrtAdSoyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrtBrans" ColumnName="OgrtBrans" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrtBrans" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrtBrans" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrtSifre" ColumnName="OgrtSifre" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrtSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrtSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgretmenGuncelle" Modifier="Public" Name="OgretmenGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="OgretmenGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Ogretmen] SET [OgrtAdSoyad] = @OgrtAdSoyad, [OgrtBrans] = @OgrtBrans, [OgrtSifre] = @OgrtSifre WHERE (([OgrtId] = @OgrtId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrtAdSoyad" ColumnName="OgrtAdSoyad" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrtAdSoyad" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrtAdSoyad" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrtBrans" ColumnName="OgrtBrans" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrtBrans" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrtBrans" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OgrtSifre" ColumnName="OgrtSifre" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@OgrtSifre" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="OgrtSifre" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrtId" ColumnName="OgrtId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrtId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrtId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="OgretmenSil" Modifier="Public" Name="OgretmenSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="OgretmenSil">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Ogretmen] SET Durum='False' WHERE (([OgrtId] = @OgrtId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="OgrtId" ColumnName="OgrtId" DataSourceName="UdemySiteDb.dbo.Tbl_Ogretmen" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@OgrtId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="OgrtId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_DerslerTableAdapter" GeneratorDataComponentClassName="Tbl_DerslerTableAdapter" Name="Tbl_Dersler" UserDataComponentName="Tbl_DerslerTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Dersler" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDersler" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DersListesi" GeneratorSourceName="FillDersler" GetMethodModifier="Public" GetMethodName="DersListesi" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="DersListesi" UserSourceName="FillDersler">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tbl_Dersler] WHERE (([DersId] = @Original_DersId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DersId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DersId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tbl_Dersler] ([DersAd], [Durum]) VALUES (@DersAd, @Durum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DersAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DersAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Tbl_Dersler.*
+FROM     Tbl_Dersler
+
+Where Durum='True'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tbl_Dersler] SET [DersAd] = @DersAd, [Durum] = @Durum WHERE (([DersId] = @Original_DersId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DersAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DersAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DersId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DersId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DersId" DataSetColumn="DersId" />
+              <Mapping SourceColumn="DersAd" DataSetColumn="DersAd" />
+              <Mapping SourceColumn="Durum" DataSetColumn="Durum" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DersEkle" Modifier="Public" Name="DersEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DersEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Dersler] ([DersAd], [Durum]) VALUES (@DersAd, @Durum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DersAd" ColumnName="DersAd" DataSourceName="UdemySiteDb.dbo.Tbl_Dersler" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@DersAd" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DersAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Durum" ColumnName="Durum" DataSourceName="UdemySiteDb.dbo.Tbl_Dersler" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DersGuncelle" Modifier="Public" Name="DersGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DersGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Dersler] 
+SET [DersAd] = @DersAd
+WHERE (([DersId] = @DersId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DersAd" ColumnName="DersAd" DataSourceName="UdemySiteDb.dbo.Tbl_Dersler" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@DersAd" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DersAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="DersId" ColumnName="DersId" DataSourceName="UdemySiteDb.dbo.Tbl_Dersler" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DersId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DersId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DersSil" Modifier="Public" Name="DersSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="DersSil">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Dersler] SET Durum='False' WHERE (([DersId] = @DersId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DersId" ColumnName="DersId" DataSourceName="UdemySiteDb.dbo.Tbl_Dersler" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DersId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DersId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Dersler" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByDersGetir" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DersGetir" GeneratorSourceName="FillByDersGetir" GetMethodModifier="Public" GetMethodName="DersGetir" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DersGetir" UserSourceName="FillByDersGetir">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DersAd FROM Tbl_Dersler
+
+Where Durum='True' and DersId=@DersId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DersId" ColumnName="DersId" DataSourceName="UdemySiteDb.dbo.Tbl_Dersler" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DersId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DersId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_FakulteTableAdapter" GeneratorDataComponentClassName="Tbl_FakulteTableAdapter" Name="Tbl_Fakulte" UserDataComponentName="Tbl_FakulteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Fakulte" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillFakulteListesi" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="FakulteListesi" GeneratorSourceName="FillFakulteListesi" GetMethodModifier="Public" GetMethodName="FakulteListesi" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="FakulteListesi" UserSourceName="FillFakulteListesi">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tbl_Fakulte] WHERE (([FakulteId] = @Original_FakulteId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_FakulteId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FakulteId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tbl_Fakulte] ([FakulteAd], [Durum]) VALUES (@FakulteAd, @Durum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FakulteAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FakulteAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Tbl_Fakulte.*
+FROM     Tbl_Fakulte Where Durum='true'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tbl_Fakulte] SET [FakulteAd] = @FakulteAd, [Durum] = @Durum WHERE (([FakulteId] = @Original_FakulteId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FakulteAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FakulteAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_FakulteId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FakulteId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="FakulteId" DataSetColumn="FakulteId" />
+              <Mapping SourceColumn="FakulteAd" DataSetColumn="FakulteAd" />
+              <Mapping SourceColumn="Durum" DataSetColumn="Durum" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="FakulteEkle" Modifier="Public" Name="FakulteEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FakulteEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Fakulte] ([FakulteAd], [Durum]) VALUES (@FakulteAd, @true)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FakulteAd" ColumnName="FakulteAd" DataSourceName="UdemySiteDb.dbo.Tbl_Fakulte" DataTypeServer="varchar(150)" DbType="AnsiString" Direction="Input" ParameterName="@FakulteAd" Precision="0" ProviderType="VarChar" Scale="0" Size="150" SourceColumn="FakulteAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="true" ColumnName="Durum" DataSourceName="UdemySiteDb.dbo.Tbl_Fakulte" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@true" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="FakulteGuncelle" Modifier="Public" Name="FakulteGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FakulteGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Fakulte] 
+SET [FakulteAd] = @FakulteAd
+WHERE (([FakulteId] = @FakulteId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="FakulteAd" ColumnName="FakulteAd" DataSourceName="UdemySiteDb.dbo.Tbl_Fakulte" DataTypeServer="varchar(150)" DbType="AnsiString" Direction="Input" ParameterName="@FakulteAd" Precision="0" ProviderType="VarChar" Scale="0" Size="150" SourceColumn="FakulteAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FakulteId" ColumnName="FakulteId" DataSourceName="UdemySiteDb.dbo.Tbl_Fakulte" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FakulteId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FakulteId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="FakulteSil" Modifier="Public" Name="FakulteSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FakulteSil">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Fakulte] SET Durum='False' WHERE (([FakulteId] = @FakulteId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FakulteId" ColumnName="FakulteId" DataSourceName="UdemySiteDb.dbo.Tbl_Fakulte" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FakulteId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FakulteId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Fakulte" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByFakulteGetir" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="FakulteGetir" GeneratorSourceName="FillByFakulteGetir" GetMethodModifier="Public" GetMethodName="FakulteGetir" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="FakulteGetir" UserSourceName="FillByFakulteGetir">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT FakulteAd FROM Tbl_Fakulte
+
+Where Durum='True' and FakulteId=@FakulteId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FakulteId" ColumnName="FakulteId" DataSourceName="UdemySiteDb.dbo.Tbl_Fakulte" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@FakulteId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="FakulteId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="Istatistik0" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="Istatistik0" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="Istatistik0" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+FROM     Tbl_Ogrenci</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings />
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Istatistik1" Modifier="Public" Name="Istatistik1" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Istatistik1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT count(*)
+FROM     Tbl_Ogrenci</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Istatistik2" Modifier="Public" Name="Istatistik2" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="Istatistik2">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT count(*)
+FROM     Tbl_Ogretmen</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Istatistik3" Modifier="Public" Name="Istatistik3" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Istatistik3">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT count(*)
+FROM     Tbl_Dersler</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Dersler" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="Istatistik4" Modifier="Public" Name="Istatistik4" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="Istatistik4">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TOP (1) Tbl_Dersler.DersAd
+FROM     Tbl_Dersler INNER JOIN
+                  Tbl_Notlar ON Tbl_Dersler.DersId = Tbl_Notlar.DersId
+GROUP BY Tbl_Dersler.DersAd
+ORDER BY AVG(Tbl_Notlar.Ortalama) DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Istatistik5" Modifier="Public" Name="Istatistik5" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="Istatistik5">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT count(*)
+FROM     Tbl_Mesajlar</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="Istatistik6" Modifier="Public" Name="Istatistik6" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="Istatistik6">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT count (*)
+FROM     Tbl_Duyurular</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_MesajlarTableAdapter" GeneratorDataComponentClassName="Tbl_MesajlarTableAdapter" Name="Tbl_Mesajlar" UserDataComponentName="Tbl_MesajlarTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="UdemySiteDb.dbo.Tbl_Mesajlar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillMesajGetir" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GelenMesaj" GeneratorSourceName="FillMesajGetir" GetMethodModifier="Public" GetMethodName="GelenMesaj" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GelenMesaj" UserSourceName="FillMesajGetir">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tbl_Mesajlar] WHERE (([MesajId] = @Original_MesajId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MesajId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MesajId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tbl_Mesajlar] ([Gonderen], [Alici], [Baslik], [Icerik], [Tarih]) VALUES (@Gonderen, @Alici, @Baslik, @Icerik, @Tarih)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Gonderen" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Gonderen" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Alici" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Alici" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Baslik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Baslik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Icerik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Icerik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Tarih" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Tarih" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT *
+FROM     Tbl_Mesajlar</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tbl_Mesajlar] SET [Gonderen] = @Gonderen, [Alici] = @Alici, [Baslik] = @Baslik, [Icerik] = @Icerik, [Tarih] = @Tarih WHERE (([MesajId] = @Original_MesajId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Gonderen" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Gonderen" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Alici" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Alici" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Baslik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Baslik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Icerik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="Icerik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Tarih" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="Tarih" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_MesajId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="MesajId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="MesajId" DataSetColumn="MesajId" />
+              <Mapping SourceColumn="Gonderen" DataSetColumn="Gonderen" />
+              <Mapping SourceColumn="Alici" DataSetColumn="Alici" />
+              <Mapping SourceColumn="Baslik" DataSetColumn="Baslik" />
+              <Mapping SourceColumn="Icerik" DataSetColumn="Icerik" />
+              <Mapping SourceColumn="Tarih" DataSetColumn="Tarih" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillMesajSec" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="MesajSec" GeneratorSourceName="FillMesajSec" GetMethodModifier="Public" GetMethodName="MesajSec" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="MesajSec" UserSourceName="FillMesajSec">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Alici, Baslik, Gonderen, Icerik, MesajId, Tarih FROM Tbl_Mesajlar WHERE AND (MesajId = @MesajId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="MesajId" ColumnName="MesajId" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@MesajId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="MesajId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="MesajGonder" Modifier="Public" Name="MesajGonder" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="MesajGonder">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Mesajlar] ([Gonderen], [Alici], [Baslik], [Icerik]) VALUES (@Gonderen, @Alici, @Baslik, @Icerik)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Gonderen" ColumnName="Gonderen" DataSourceName="UdemySiteDb.dbo.Tbl_Mesajlar" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@Gonderen" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="Gonderen" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Alici" ColumnName="Alici" DataSourceName="UdemySiteDb.dbo.Tbl_Mesajlar" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@Alici" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="Alici" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Baslik" ColumnName="Baslik" DataSourceName="UdemySiteDb.dbo.Tbl_Mesajlar" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@Baslik" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="Baslik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Icerik" ColumnName="Icerik" DataSourceName="UdemySiteDb.dbo.Tbl_Mesajlar" DataTypeServer="varchar(500)" DbType="AnsiString" Direction="Input" ParameterName="@Icerik" Precision="0" ProviderType="VarChar" Scale="0" Size="500" SourceColumn="Icerik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="UdemySiteDb.dbo.Tbl_Mesajlar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="OgrenciMesajGetir" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgrenciGelenMesajlar" GeneratorSourceName="OgrenciMesajGetir" GetMethodModifier="Public" GetMethodName="OgrenciGelenMesajlar" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgrenciGelenMesajlar" UserSourceName="OgrenciMesajGetir">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Alici, Baslik, Gonderen, Icerik, MesajId, Tarih FROM Tbl_Mesajlar WHERE (Alici = @Numara)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Numara" ColumnName="Alici" DataSourceName="" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@Numara" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="Alici" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (Web.config)" DbObjectName="UdemySiteDb.dbo.Tbl_Mesajlar" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="OgrenciMesajGonder" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="OgrenciGidenMesajlar" GeneratorSourceName="OgrenciMesajGonder" GetMethodModifier="Public" GetMethodName="OgrenciGidenMesajlar" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="OgrenciGidenMesajlar" UserSourceName="OgrenciMesajGonder">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Alici, Baslik, Gonderen, Icerik, MesajId, Tarih FROM Tbl_Mesajlar WHERE (Gonderen = @Numara)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Numara" ColumnName="Gonderen" DataSourceName="" DataTypeServer="varchar(5)" DbType="AnsiString" Direction="Input" ParameterName="@Numara" Precision="0" ProviderType="VarChar" Scale="0" Size="5" SourceColumn="Gonderen" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_DuyurularTableAdapter" GeneratorDataComponentClassName="Tbl_DuyurularTableAdapter" Name="Tbl_Duyurular" UserDataComponentName="Tbl_DuyurularTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Duyurular" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDuyuruListesi" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DuyuruListesi" GeneratorSourceName="FillDuyuruListesi" GetMethodModifier="Public" GetMethodName="DuyuruListesi" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="DuyuruListesi" UserSourceName="FillDuyuruListesi">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tbl_Duyurular] WHERE (([DuyuruId] = @Original_DuyuruId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DuyuruId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DuyuruId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tbl_Duyurular] ([DuyuruBaslik], [DuyuruIcerik], [DuyuruSahibi]) VALUES (@DuyuruBaslik, @DuyuruIcerik, @DuyuruSahibi)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DuyuruBaslik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DuyuruBaslik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DuyuruIcerik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DuyuruIcerik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DuyuruSahibi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DuyuruSahibi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DuyuruId, DuyuruBaslik, DuyuruIcerik, DuyuruSahibi FROM  Tbl_Duyurular</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tbl_Duyurular] SET [DuyuruBaslik] = @DuyuruBaslik, [DuyuruIcerik] = @DuyuruIcerik, [DuyuruSahibi] = @DuyuruSahibi WHERE (([DuyuruId] = @Original_DuyuruId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DuyuruBaslik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DuyuruBaslik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DuyuruIcerik" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DuyuruIcerik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@DuyuruSahibi" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DuyuruSahibi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_DuyuruId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DuyuruId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DuyuruId" DataSetColumn="DuyuruId" />
+              <Mapping SourceColumn="DuyuruBaslik" DataSetColumn="DuyuruBaslik" />
+              <Mapping SourceColumn="DuyuruIcerik" DataSetColumn="DuyuruIcerik" />
+              <Mapping SourceColumn="DuyuruSahibi" DataSetColumn="DuyuruSahibi" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DuyuruEkle" Modifier="Public" Name="DuyuruEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DuyuruEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Duyurular] ([DuyuruBaslik], [DuyuruIcerik], [DuyuruSahibi]) VALUES (@DuyuruBaslik, @DuyuruIcerik, @DuyuruSahibi)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="DuyuruBaslik" ColumnName="DuyuruBaslik" DataSourceName="UdemySiteDb.dbo.Tbl_Duyurular" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@DuyuruBaslik" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DuyuruBaslik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DuyuruIcerik" ColumnName="DuyuruIcerik" DataSourceName="UdemySiteDb.dbo.Tbl_Duyurular" DataTypeServer="varchar(250)" DbType="AnsiString" Direction="Input" ParameterName="@DuyuruIcerik" Precision="0" ProviderType="VarChar" Scale="0" Size="250" SourceColumn="DuyuruIcerik" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DuyuruSahibi" ColumnName="DuyuruSahibi" DataSourceName="UdemySiteDb.dbo.Tbl_Duyurular" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DuyuruSahibi" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DuyuruSahibi" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Duyurular" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillDuyuru" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="DuyuruSec" GeneratorSourceName="FillDuyuru" GetMethodModifier="Public" GetMethodName="DuyuruSec" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="DuyuruSec" UserSourceName="FillDuyuru">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DuyuruBaslik, DuyuruIcerik, DuyuruId, DuyuruSahibi FROM Tbl_Duyurular WHERE (DuyuruId = @DuyuruId)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DuyuruId" ColumnName="DuyuruId" DataSourceName="UdemySiteDb.dbo.Tbl_Duyurular" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@DuyuruId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="DuyuruId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Tbl_BolumTableAdapter" GeneratorDataComponentClassName="Tbl_BolumTableAdapter" Name="Tbl_Bolum" UserDataComponentName="Tbl_BolumTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Bolum" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBolumListesi" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="BolumListesi" GeneratorSourceName="FillBolumListesi" GetMethodModifier="Public" GetMethodName="BolumListesi" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="BolumListesi" UserSourceName="FillBolumListesi">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [Tbl_Bolum] WHERE (([BolumId] = @Original_BolumId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_BolumId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BolumId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Tbl_Bolum] ([BolumAd], [Fakulte], [Durum]) VALUES (@BolumAd, @Fakulte, @Durum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BolumAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BolumAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Fakulte" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fakulte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BolumId, BolumAd, Fakulte, Durum
+FROM     Tbl_Bolum
+Where Durum='true'</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [Tbl_Bolum] SET [BolumAd] = @BolumAd, [Fakulte] = @Fakulte, [Durum] = @Durum WHERE (([BolumId] = @Original_BolumId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@BolumAd" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="BolumAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Fakulte" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Fakulte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_BolumId" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="BolumId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BolumId" DataSetColumn="BolumId" />
+              <Mapping SourceColumn="BolumAd" DataSetColumn="BolumAd" />
+              <Mapping SourceColumn="Fakulte" DataSetColumn="Fakulte" />
+              <Mapping SourceColumn="Durum" DataSetColumn="Durum" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BolumEkle" Modifier="Public" Name="BolumEkle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="BolumEkle">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>INSERT INTO [Tbl_Bolum] ([Fakulte], [BolumAd], [Durum]) VALUES (@Fakulte, @BolumAd, @Durum)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Fakulte" ColumnName="Fakulte" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Fakulte" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Fakulte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="BolumAd" ColumnName="BolumAd" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="varchar(150)" DbType="AnsiString" Direction="Input" ParameterName="@BolumAd" Precision="0" ProviderType="VarChar" Scale="0" Size="150" SourceColumn="BolumAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="Durum" ColumnName="Durum" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="bit" DbType="Boolean" Direction="Input" ParameterName="@Durum" Precision="0" ProviderType="Bit" Scale="0" Size="1" SourceColumn="Durum" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BolumGuncelle" Modifier="Public" Name="BolumGuncelle" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="BolumGuncelle">
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Bolum] 
+SET [Fakulte] = @Fakulte, [BolumAd] = @BolumAd
+WHERE (([BolumId] = @BolumId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Fakulte" ColumnName="Fakulte" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Fakulte" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Fakulte" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="BolumAd" ColumnName="BolumAd" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="varchar(150)" DbType="AnsiString" Direction="Input" ParameterName="@BolumAd" Precision="0" ProviderType="VarChar" Scale="0" Size="150" SourceColumn="BolumAd" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BolumId" ColumnName="BolumId" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BolumId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BolumId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="BolumSil" Modifier="Public" Name="BolumSil" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="BolumSil">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>UPDATE [Tbl_Bolum] SET Durum='False' WHERE (([BolumId] = @BolumId))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="BolumId" ColumnName="BolumId" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BolumId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BolumId" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UdemySiteDbConnectionString (UdemyWeb)" DbObjectName="UdemySiteDb.dbo.Tbl_Bolum" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByBolumGetir" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="BolumGetir" GeneratorSourceName="FillByBolumGetir" GetMethodModifier="Public" GetMethodName="BolumGetir" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="BolumGetir" UserSourceName="FillByBolumGetir">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Fakulte, BolumAd FROM Tbl_Bolum
+
+Where Durum='True' and BolumId=@BolumId</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="BolumId" ColumnName="BolumId" DataSourceName="UdemySiteDb.dbo.Tbl_Bolum" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@BolumId" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="BolumId" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet" msprop:Generator_DataSetName="DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Tbl_Ogrenci" msprop:Generator_RowEvHandlerName="Tbl_OgrenciRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_OgrenciRowDeleted" msprop:Generator_RowDeletingName="Tbl_OgrenciRowDeleting" msprop:Generator_RowEvArgName="Tbl_OgrenciRowChangeEvent" msprop:Generator_TablePropName="Tbl_Ogrenci" msprop:Generator_RowChangedName="Tbl_OgrenciRowChanged" msprop:Generator_UserTableName="Tbl_Ogrenci" msprop:Generator_RowChangingName="Tbl_OgrenciRowChanging" msprop:Generator_RowClassName="Tbl_OgrenciRow" msprop:Generator_TableClassName="Tbl_OgrenciDataTable" msprop:Generator_TableVarName="tableTbl_Ogrenci">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OgrId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="OgrIdColumn" msprop:Generator_ColumnPropNameInRow="OgrId" msprop:Generator_UserColumnName="OgrId" msprop:Generator_ColumnVarNameInTable="columnOgrId" type="xs:int" />
+              <xs:element name="OgrenciTC" msprop:Generator_ColumnPropNameInTable="OgrenciTCColumn" msprop:Generator_ColumnPropNameInRow="OgrenciTC" msprop:Generator_UserColumnName="OgrenciTC" msprop:Generator_ColumnVarNameInTable="columnOgrenciTC" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="11" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrAd" msprop:Generator_ColumnPropNameInTable="OgrAdColumn" msprop:Generator_ColumnPropNameInRow="OgrAd" msprop:Generator_UserColumnName="OgrAd" msprop:Generator_ColumnVarNameInTable="columnOgrAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrSoyad" msprop:Generator_ColumnPropNameInTable="OgrSoyadColumn" msprop:Generator_ColumnPropNameInRow="OgrSoyad" msprop:Generator_UserColumnName="OgrSoyad" msprop:Generator_ColumnVarNameInTable="columnOgrSoyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrCinsiyet" msprop:Generator_ColumnPropNameInTable="OgrCinsiyetColumn" msprop:Generator_ColumnPropNameInRow="OgrCinsiyet" msprop:Generator_UserColumnName="OgrCinsiyet" msprop:Generator_ColumnVarNameInTable="columnOgrCinsiyet" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrTelefon" msprop:Generator_ColumnPropNameInTable="OgrTelefonColumn" msprop:Generator_ColumnPropNameInRow="OgrTelefon" msprop:Generator_UserColumnName="OgrTelefon" msprop:Generator_ColumnVarNameInTable="columnOgrTelefon" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrMail" msprop:Generator_ColumnPropNameInTable="OgrMailColumn" msprop:Generator_ColumnPropNameInRow="OgrMail" msprop:Generator_UserColumnName="OgrMail" msprop:Generator_ColumnVarNameInTable="columnOgrMail" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrSifre" msprop:Generator_ColumnPropNameInTable="OgrSifreColumn" msprop:Generator_ColumnPropNameInRow="OgrSifre" msprop:Generator_UserColumnName="OgrSifre" msprop:Generator_ColumnVarNameInTable="columnOgrSifre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FakulteAd" msprop:Generator_ColumnPropNameInTable="FakulteAdColumn" msprop:Generator_ColumnPropNameInRow="FakulteAd" msprop:Generator_UserColumnName="FakulteAd" msprop:Generator_ColumnVarNameInTable="columnFakulteAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BolumAd" msprop:Generator_ColumnPropNameInTable="BolumAdColumn" msprop:Generator_ColumnPropNameInRow="BolumAd" msprop:Generator_UserColumnName="BolumAd" msprop:Generator_ColumnVarNameInTable="columnBolumAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrFakulte" msprop:Generator_ColumnPropNameInTable="OgrFakulteColumn" msprop:Generator_ColumnPropNameInRow="OgrFakulte" msprop:Generator_UserColumnName="OgrFakulte" msprop:Generator_ColumnVarNameInTable="columnOgrFakulte" type="xs:int" minOccurs="0" />
+              <xs:element name="OgrBolum" msprop:Generator_ColumnPropNameInTable="OgrBolumColumn" msprop:Generator_ColumnPropNameInRow="OgrBolum" msprop:Generator_UserColumnName="OgrBolum" msprop:Generator_ColumnVarNameInTable="columnOgrBolum" type="xs:int" minOccurs="0" />
+              <xs:element name="Durum" msprop:Generator_ColumnPropNameInTable="DurumColumn" msprop:Generator_ColumnPropNameInRow="Durum" msprop:Generator_UserColumnName="Durum" msprop:Generator_ColumnVarNameInTable="columnDurum" type="xs:boolean" minOccurs="0" />
+              <xs:element name="FakulteId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="FakulteIdColumn" msprop:Generator_ColumnPropNameInRow="FakulteId" msprop:Generator_UserColumnName="FakulteId" msprop:Generator_ColumnVarNameInTable="columnFakulteId" type="xs:int" />
+              <xs:element name="Durum1" msprop:Generator_ColumnPropNameInTable="Durum1Column" msprop:Generator_ColumnPropNameInRow="Durum1" msprop:Generator_UserColumnName="Durum1" msprop:Generator_ColumnVarNameInTable="columnDurum1" type="xs:boolean" minOccurs="0" />
+              <xs:element name="BolumId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="BolumIdColumn" msprop:Generator_ColumnPropNameInRow="BolumId" msprop:Generator_UserColumnName="BolumId" msprop:Generator_ColumnVarNameInTable="columnBolumId" type="xs:int" />
+              <xs:element name="Fakulte" msprop:Generator_ColumnPropNameInTable="FakulteColumn" msprop:Generator_ColumnPropNameInRow="Fakulte" msprop:Generator_UserColumnName="Fakulte" msprop:Generator_ColumnVarNameInTable="columnFakulte" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="OgrNotlar" msprop:Generator_RowEvHandlerName="OgrNotlarRowChangeEventHandler" msprop:Generator_RowDeletedName="OgrNotlarRowDeleted" msprop:Generator_RowDeletingName="OgrNotlarRowDeleting" msprop:Generator_RowEvArgName="OgrNotlarRowChangeEvent" msprop:Generator_TablePropName="OgrNotlar" msprop:Generator_RowChangedName="OgrNotlarRowChanged" msprop:Generator_UserTableName="OgrNotlar" msprop:Generator_RowChangingName="OgrNotlarRowChanging" msprop:Generator_RowClassName="OgrNotlarRow" msprop:Generator_TableClassName="OgrNotlarDataTable" msprop:Generator_TableVarName="tableOgrNotlar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="NotId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="NotIdColumn" msprop:Generator_ColumnPropNameInRow="NotId" msprop:Generator_UserColumnName="NotId" msprop:Generator_ColumnVarNameInTable="columnNotId" type="xs:int" />
+              <xs:element name="OgrenciId" msprop:Generator_ColumnPropNameInTable="OgrenciIdColumn" msprop:Generator_ColumnPropNameInRow="OgrenciId" msprop:Generator_UserColumnName="OgrenciId" msprop:Generator_ColumnVarNameInTable="columnOgrenciId" type="xs:int" />
+              <xs:element name="Ogrenci" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="OgrenciColumn" msprop:Generator_ColumnPropNameInRow="Ogrenci" msprop:Generator_UserColumnName="Ogrenci" msprop:Generator_ColumnVarNameInTable="columnOgrenci" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DersAd" msprop:Generator_ColumnPropNameInTable="DersAdColumn" msprop:Generator_ColumnPropNameInRow="DersAd" msprop:Generator_UserColumnName="DersAd" msprop:Generator_ColumnVarNameInTable="columnDersAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Sinav1" msprop:Generator_ColumnPropNameInTable="Sinav1Column" msprop:Generator_ColumnPropNameInRow="Sinav1" msprop:Generator_UserColumnName="Sinav1" msprop:Generator_ColumnVarNameInTable="columnSinav1" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Sinav2" msprop:Generator_ColumnPropNameInTable="Sinav2Column" msprop:Generator_ColumnPropNameInRow="Sinav2" msprop:Generator_UserColumnName="Sinav2" msprop:Generator_ColumnVarNameInTable="columnSinav2" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Sinav3" msprop:Generator_ColumnPropNameInTable="Sinav3Column" msprop:Generator_ColumnPropNameInRow="Sinav3" msprop:Generator_UserColumnName="Sinav3" msprop:Generator_ColumnVarNameInTable="columnSinav3" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="Ortalama" msprop:Generator_ColumnPropNameInTable="OrtalamaColumn" msprop:Generator_ColumnPropNameInRow="Ortalama" msprop:Generator_UserColumnName="Ortalama" msprop:Generator_ColumnVarNameInTable="columnOrtalama" type="xs:decimal" minOccurs="0" />
+              <xs:element name="NotDurum" msprop:Generator_ColumnPropNameInTable="NotDurumColumn" msprop:Generator_ColumnPropNameInRow="NotDurum" msprop:Generator_UserColumnName="NotDurum" msprop:Generator_ColumnVarNameInTable="columnNotDurum" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tbl_Ogretmen" msprop:Generator_RowEvHandlerName="Tbl_OgretmenRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_OgretmenRowDeleted" msprop:Generator_RowDeletingName="Tbl_OgretmenRowDeleting" msprop:Generator_RowEvArgName="Tbl_OgretmenRowChangeEvent" msprop:Generator_TablePropName="Tbl_Ogretmen" msprop:Generator_RowChangedName="Tbl_OgretmenRowChanged" msprop:Generator_UserTableName="Tbl_Ogretmen" msprop:Generator_RowChangingName="Tbl_OgretmenRowChanging" msprop:Generator_RowClassName="Tbl_OgretmenRow" msprop:Generator_TableClassName="Tbl_OgretmenDataTable" msprop:Generator_TableVarName="tableTbl_Ogretmen">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="OgrtId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="OgrtIdColumn" msprop:Generator_ColumnPropNameInRow="OgrtId" msprop:Generator_UserColumnName="OgrtId" msprop:Generator_ColumnVarNameInTable="columnOgrtId" type="xs:int" />
+              <xs:element name="OgrtAdSoyad" msprop:Generator_ColumnPropNameInTable="OgrtAdSoyadColumn" msprop:Generator_ColumnPropNameInRow="OgrtAdSoyad" msprop:Generator_UserColumnName="OgrtAdSoyad" msprop:Generator_ColumnVarNameInTable="columnOgrtAdSoyad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OgrtBrans" msprop:Generator_ColumnPropNameInTable="OgrtBransColumn" msprop:Generator_ColumnPropNameInRow="OgrtBrans" msprop:Generator_UserColumnName="OgrtBrans" msprop:Generator_ColumnVarNameInTable="columnOgrtBrans" type="xs:int" minOccurs="0" />
+              <xs:element name="OgrtSifre" msprop:Generator_ColumnPropNameInTable="OgrtSifreColumn" msprop:Generator_ColumnPropNameInRow="OgrtSifre" msprop:Generator_UserColumnName="OgrtSifre" msprop:Generator_ColumnVarNameInTable="columnOgrtSifre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Durum" msprop:Generator_ColumnPropNameInTable="DurumColumn" msprop:Generator_ColumnPropNameInRow="Durum" msprop:Generator_UserColumnName="Durum" msprop:Generator_ColumnVarNameInTable="columnDurum" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tbl_Dersler" msprop:Generator_RowEvHandlerName="Tbl_DerslerRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_DerslerRowDeleted" msprop:Generator_RowDeletingName="Tbl_DerslerRowDeleting" msprop:Generator_RowEvArgName="Tbl_DerslerRowChangeEvent" msprop:Generator_TablePropName="Tbl_Dersler" msprop:Generator_RowChangedName="Tbl_DerslerRowChanged" msprop:Generator_UserTableName="Tbl_Dersler" msprop:Generator_RowChangingName="Tbl_DerslerRowChanging" msprop:Generator_RowClassName="Tbl_DerslerRow" msprop:Generator_TableClassName="Tbl_DerslerDataTable" msprop:Generator_TableVarName="tableTbl_Dersler">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DersId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="DersIdColumn" msprop:Generator_ColumnPropNameInRow="DersId" msprop:Generator_UserColumnName="DersId" msprop:Generator_ColumnVarNameInTable="columnDersId" type="xs:int" />
+              <xs:element name="DersAd" msprop:Generator_ColumnPropNameInTable="DersAdColumn" msprop:Generator_ColumnPropNameInRow="DersAd" msprop:Generator_UserColumnName="DersAd" msprop:Generator_ColumnVarNameInTable="columnDersAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Durum" msprop:Generator_ColumnPropNameInTable="DurumColumn" msprop:Generator_ColumnPropNameInRow="Durum" msprop:Generator_UserColumnName="Durum" msprop:Generator_ColumnVarNameInTable="columnDurum" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tbl_Fakulte" msprop:Generator_RowEvHandlerName="Tbl_FakulteRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_FakulteRowDeleted" msprop:Generator_RowDeletingName="Tbl_FakulteRowDeleting" msprop:Generator_RowEvArgName="Tbl_FakulteRowChangeEvent" msprop:Generator_TablePropName="Tbl_Fakulte" msprop:Generator_RowChangedName="Tbl_FakulteRowChanged" msprop:Generator_UserTableName="Tbl_Fakulte" msprop:Generator_RowChangingName="Tbl_FakulteRowChanging" msprop:Generator_RowClassName="Tbl_FakulteRow" msprop:Generator_TableClassName="Tbl_FakulteDataTable" msprop:Generator_TableVarName="tableTbl_Fakulte">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FakulteId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="FakulteIdColumn" msprop:Generator_ColumnPropNameInRow="FakulteId" msprop:Generator_UserColumnName="FakulteId" msprop:Generator_ColumnVarNameInTable="columnFakulteId" type="xs:int" />
+              <xs:element name="FakulteAd" msprop:Generator_ColumnPropNameInTable="FakulteAdColumn" msprop:Generator_ColumnPropNameInRow="FakulteAd" msprop:Generator_UserColumnName="FakulteAd" msprop:Generator_ColumnVarNameInTable="columnFakulteAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Durum" msprop:Generator_ColumnPropNameInTable="DurumColumn" msprop:Generator_ColumnPropNameInRow="Durum" msprop:Generator_UserColumnName="Durum" msprop:Generator_ColumnVarNameInTable="columnDurum" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tbl_Mesajlar" msprop:Generator_RowEvHandlerName="Tbl_MesajlarRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_MesajlarRowDeleted" msprop:Generator_RowDeletingName="Tbl_MesajlarRowDeleting" msprop:Generator_RowEvArgName="Tbl_MesajlarRowChangeEvent" msprop:Generator_TablePropName="Tbl_Mesajlar" msprop:Generator_RowChangedName="Tbl_MesajlarRowChanged" msprop:Generator_UserTableName="Tbl_Mesajlar" msprop:Generator_RowChangingName="Tbl_MesajlarRowChanging" msprop:Generator_RowClassName="Tbl_MesajlarRow" msprop:Generator_TableClassName="Tbl_MesajlarDataTable" msprop:Generator_TableVarName="tableTbl_Mesajlar">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MesajId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInTable="MesajIdColumn" msprop:Generator_ColumnPropNameInRow="MesajId" msprop:Generator_UserColumnName="MesajId" msprop:Generator_ColumnVarNameInTable="columnMesajId" type="xs:int" />
+              <xs:element name="Gonderen" msprop:Generator_ColumnPropNameInTable="GonderenColumn" msprop:Generator_ColumnPropNameInRow="Gonderen" msprop:Generator_UserColumnName="Gonderen" msprop:Generator_ColumnVarNameInTable="columnGonderen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Alici" msprop:Generator_ColumnPropNameInTable="AliciColumn" msprop:Generator_ColumnPropNameInRow="Alici" msprop:Generator_UserColumnName="Alici" msprop:Generator_ColumnVarNameInTable="columnAlici" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Baslik" msprop:Generator_ColumnPropNameInTable="BaslikColumn" msprop:Generator_ColumnPropNameInRow="Baslik" msprop:Generator_UserColumnName="Baslik" msprop:Generator_ColumnVarNameInTable="columnBaslik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Icerik" msprop:Generator_ColumnPropNameInTable="IcerikColumn" msprop:Generator_ColumnPropNameInRow="Icerik" msprop:Generator_UserColumnName="Icerik" msprop:Generator_ColumnVarNameInTable="columnIcerik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="500" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tarih" msprop:Generator_ColumnPropNameInTable="TarihColumn" msprop:Generator_ColumnPropNameInRow="Tarih" msprop:Generator_UserColumnName="Tarih" msprop:Generator_ColumnVarNameInTable="columnTarih" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tbl_Duyurular" msprop:Generator_RowClassName="Tbl_DuyurularRow" msprop:Generator_RowEvHandlerName="Tbl_DuyurularRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_DuyurularRowDeleted" msprop:Generator_RowDeletingName="Tbl_DuyurularRowDeleting" msprop:Generator_RowEvArgName="Tbl_DuyurularRowChangeEvent" msprop:Generator_TablePropName="Tbl_Duyurular" msprop:Generator_RowChangedName="Tbl_DuyurularRowChanged" msprop:Generator_UserTableName="Tbl_Duyurular" msprop:Generator_RowChangingName="Tbl_DuyurularRowChanging" msprop:Generator_TableClassName="Tbl_DuyurularDataTable" msprop:Generator_TableVarName="tableTbl_Duyurular">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DuyuruId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="DuyuruId" msprop:Generator_ColumnPropNameInTable="DuyuruIdColumn" msprop:Generator_ColumnPropNameInRow="DuyuruId" msprop:Generator_ColumnVarNameInTable="columnDuyuruId" type="xs:int" />
+              <xs:element name="DuyuruBaslik" msprop:Generator_UserColumnName="DuyuruBaslik" msprop:Generator_ColumnPropNameInTable="DuyuruBaslikColumn" msprop:Generator_ColumnPropNameInRow="DuyuruBaslik" msprop:Generator_ColumnVarNameInTable="columnDuyuruBaslik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DuyuruIcerik" msprop:Generator_UserColumnName="DuyuruIcerik" msprop:Generator_ColumnPropNameInTable="DuyuruIcerikColumn" msprop:Generator_ColumnPropNameInRow="DuyuruIcerik" msprop:Generator_ColumnVarNameInTable="columnDuyuruIcerik" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="250" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DuyuruSahibi" msprop:Generator_UserColumnName="DuyuruSahibi" msprop:Generator_ColumnPropNameInTable="DuyuruSahibiColumn" msprop:Generator_ColumnPropNameInRow="DuyuruSahibi" msprop:Generator_ColumnVarNameInTable="columnDuyuruSahibi" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Tbl_Bolum" msprop:Generator_RowClassName="Tbl_BolumRow" msprop:Generator_RowEvHandlerName="Tbl_BolumRowChangeEventHandler" msprop:Generator_RowDeletedName="Tbl_BolumRowDeleted" msprop:Generator_RowDeletingName="Tbl_BolumRowDeleting" msprop:Generator_RowEvArgName="Tbl_BolumRowChangeEvent" msprop:Generator_TablePropName="Tbl_Bolum" msprop:Generator_RowChangedName="Tbl_BolumRowChanged" msprop:Generator_UserTableName="Tbl_Bolum" msprop:Generator_RowChangingName="Tbl_BolumRowChanging" msprop:Generator_TableClassName="Tbl_BolumDataTable" msprop:Generator_TableVarName="tableTbl_Bolum">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BolumId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="BolumId" msprop:Generator_ColumnPropNameInTable="BolumIdColumn" msprop:Generator_ColumnPropNameInRow="BolumId" msprop:Generator_ColumnVarNameInTable="columnBolumId" type="xs:int" />
+              <xs:element name="BolumAd" msprop:Generator_UserColumnName="BolumAd" msprop:Generator_ColumnPropNameInTable="BolumAdColumn" msprop:Generator_ColumnPropNameInRow="BolumAd" msprop:Generator_ColumnVarNameInTable="columnBolumAd" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Fakulte" msprop:Generator_UserColumnName="Fakulte" msprop:Generator_ColumnPropNameInTable="FakulteColumn" msprop:Generator_ColumnPropNameInRow="Fakulte" msprop:Generator_ColumnVarNameInTable="columnFakulte" type="xs:int" minOccurs="0" />
+              <xs:element name="Durum" msprop:Generator_UserColumnName="Durum" msprop:Generator_ColumnPropNameInTable="DurumColumn" msprop:Generator_ColumnPropNameInRow="Durum" msprop:Generator_ColumnVarNameInTable="columnDurum" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Ogrenci" />
+      <xs:field xpath="mstns:OgrId" />
+    </xs:unique>
+    <xs:unique name="Tbl_Ogretmen_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Ogretmen" />
+      <xs:field xpath="mstns:OgrtId" />
+    </xs:unique>
+    <xs:unique name="Tbl_Dersler_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Dersler" />
+      <xs:field xpath="mstns:DersId" />
+    </xs:unique>
+    <xs:unique name="Tbl_Fakulte_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Fakulte" />
+      <xs:field xpath="mstns:FakulteId" />
+    </xs:unique>
+    <xs:unique name="Tbl_Mesajlar_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Mesajlar" />
+      <xs:field xpath="mstns:MesajId" />
+    </xs:unique>
+    <xs:unique name="Tbl_Duyurular_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Duyurular" />
+      <xs:field xpath="mstns:DuyuruId" />
+    </xs:unique>
+    <xs:unique name="Tbl_Bolum_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Tbl_Bolum" />
+      <xs:field xpath="mstns:BolumId" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_Tbl_Ogretmen_Tbl_Dersler1" msdata:parent="Tbl_Dersler" msdata:child="Tbl_Ogretmen" msdata:parentkey="DersId" msdata:childkey="OgrtBrans" msprop:Generator_UserParentTable="Tbl_Dersler" msprop:Generator_UserChildTable="Tbl_Ogretmen" msprop:Generator_RelationVarName="relationFK_Tbl_Ogretmen_Tbl_Dersler1" msprop:Generator_ChildPropName="GetTbl_OgretmenRows" msprop:Generator_ParentPropName="Tbl_DerslerRow" msprop:Generator_UserRelationName="FK_Tbl_Ogretmen_Tbl_Dersler1" />
+      <msdata:Relationship name="FK_Tbl_Bolum_Tbl_Fakulte" msdata:parent="Tbl_Fakulte" msdata:child="Tbl_Ogrenci" msdata:parentkey="FakulteId" msdata:childkey="Fakulte" msprop:Generator_UserParentTable="Tbl_Fakulte" msprop:Generator_UserChildTable="Tbl_Ogrenci" msprop:Generator_RelationVarName="relationFK_Tbl_Bolum_Tbl_Fakulte" msprop:Generator_ChildPropName="GetTbl_OgrenciRows" msprop:Generator_UserRelationName="FK_Tbl_Bolum_Tbl_Fakulte" msprop:Generator_ParentPropName="Tbl_FakulteRow" />
+      <msdata:Relationship name="FK_Tbl_Bolum_Tbl_Fakulte1" msdata:parent="Tbl_Fakulte" msdata:child="Tbl_Bolum" msdata:parentkey="FakulteId" msdata:childkey="Fakulte" msprop:Generator_UserParentTable="Tbl_Fakulte" msprop:Generator_UserChildTable="Tbl_Bolum" msprop:Generator_RelationVarName="relationFK_Tbl_Bolum_Tbl_Fakulte1" msprop:Generator_ChildPropName="GetTbl_BolumRows" msprop:Generator_UserRelationName="FK_Tbl_Bolum_Tbl_Fakulte1" msprop:Generator_ParentPropName="Tbl_FakulteRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

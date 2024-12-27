@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterOgretmen.master.cs" Inherits="MasterOgretmen" %>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>UdemyWeb (Akademisyen)</title>
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="Bootstrap/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Our Custom CSS -->
+    <link href="Bootstrap/StyleSheet2.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Akademisyen Paneli</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#homeSubmenu1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="glyphicon glyphicon-user"></i>
+                        Profil
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu1">
+                        <li><a href="Ogretmen_OgretmenProfil.aspx"><i class="glyphicon glyphicon-user"></i>Profil</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu2" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="glyphicon glyphicon-book"></i>
+                        Not İşlemleri
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu2">
+                        <li><a href="Ogretmen_NotListesi.aspx"><i class="glyphicon glyphicon-list"></i>Not Listesi</a></li>
+                        <li><a href="Ogretmen_NotEkle.aspx"><i class="glyphicon glyphicon-plus"></i>Not Ekle</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu3" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="glyphicon glyphicon-bell"></i>
+                        Duyurular
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu3">
+                        <li><a href="Ogretmen_DuyuruListesi.aspx"><i class="glyphicon glyphicon-list"></i>Duyuru Listesi</a></li>
+                        <li><a href="Ogretmen_DuyuruEkle.aspx"><i class="glyphicon glyphicon-plus"></i>Duyuru Ekle</a></li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#homeSubmenu4" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        Mesajlar
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu4">
+                        <li><a href="Ogretmen_GelenMesajlar.aspx"><i class="glyphicon glyphicon-download"></i>Gelen Kutusu</a></li>
+                        <li><a href="Ogretmen_GidenMesajlar.aspx"><i class="glyphicon glyphicon-upload"></i>Giden Kutusu</a></li>
+                        <li><a href="Ogretmen_MesajEkle.aspx"><i class="glyphicon glyphicon-plus"></i>Mesaj Ekle</a></li>
+                    </ul>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <!-- jQuery CDN - Slim version (=without AJAX) -->
+        <script src="Bootstrap/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap JS -->
+        <script src="Bootstrap/js-bootstrap.min.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#sidebarCollapse').on('click', function () {
+                    $('#sidebar').toggleClass('active');
+                });
+            });
+        </script>
+</body>
+
+</html>
