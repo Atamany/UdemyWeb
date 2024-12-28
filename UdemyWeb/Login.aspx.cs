@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 public partial class Login : System.Web.UI.Page
 {
@@ -26,6 +27,8 @@ public partial class Login : System.Web.UI.Page
         if (dr.Read())
         {
             Session.Add("Numara", TxtNumara.Text);
+            FormsAuthentication.SetAuthCookie(TxtNumara.Text, false);
+
             Response.Redirect("Ogrenci_OgrenciProfil.aspx?Numara=" + TxtNumara.Text);
         }
         else { TxtSifre.Text = "Hatalı Şifre!"; }
@@ -42,6 +45,7 @@ public partial class Login : System.Web.UI.Page
         if (dr.Read())
         {
             Session.Add("Numara", TxtNumara.Text);
+            FormsAuthentication.SetAuthCookie(TxtNumara.Text, false);
             Response.Redirect("Ogretmen_OgretmenProfil.aspx?Numara=" + TxtNumara.Text);
         }
         else { TxtSifre.Text = "Hatalı Şifre!"; }
@@ -58,6 +62,7 @@ public partial class Login : System.Web.UI.Page
         if (dr.Read())
         {
             Session.Add("Numara", TxtNumara.Text);
+            FormsAuthentication.SetAuthCookie(TxtNumara.Text, false);
             Response.Redirect("Admin_OgrenciListesi.aspx?Numara=" + TxtNumara.Text);
         }
         else { TxtSifre.Text = "Hatalı Şifre!"; }
