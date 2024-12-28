@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterAdmin.master" AutoEventWireup="true" CodeFile="Admin_DuyuruListesi.aspx.cs" Inherits="Admin_DuyuruListesi" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterOgrenci.master" AutoEventWireup="true" CodeFile="Ogrenci_DuyuruListesi.aspx.cs" Inherits="Ogrenci_DuyuruListesi" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 </asp:Content>
@@ -22,6 +22,7 @@
                         <td><%# Eval("DuyuruBaslik") %></td>
                         <td><%# Eval("DuyuruIcerik") %></td>
                         <td><%# Eval("DuyuruTarih") %></td>
+
                     </tr>
                 </ItemTemplate>
             </asp:Repeater>
