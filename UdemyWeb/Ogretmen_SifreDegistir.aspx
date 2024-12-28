@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder2" runat="Server">
     <form id="Form1" runat="server">
-        <h1>Profilim</h1>
+        <h1>Şifre Değiştirme Paneli</h1>
         <br />
         <br />
         <div class="form-group">
