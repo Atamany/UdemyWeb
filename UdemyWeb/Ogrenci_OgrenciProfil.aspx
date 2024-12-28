@@ -17,7 +17,7 @@
             <asp:TextBox ID="TxtOgrAdSoyad" runat="server" CssClass="form-control" Enabled="false">Ad-Soyad: </asp:TextBox>
         </div>
         <div class="form-group">
-            <asp:TextBox ID="TxtOgrFakulte" runat="server" CssClass="form-control" Enabled="false">Fakülte/MYO:: </asp:TextBox>
+            <asp:TextBox ID="TxtOgrFakulte" runat="server" CssClass="form-control" Enabled="false">Fakülte/MYO: </asp:TextBox>
         </div>
         <div class="form-group">
             <asp:TextBox ID="TxtOgrBolum" runat="server" CssClass="form-control" Enabled="false">Bölüm: </asp:TextBox>

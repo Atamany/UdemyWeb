@@ -116,18 +116,19 @@
         <div id="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
         </div>
-        <!-- jQuery CDN - Slim version (=without AJAX) -->
-        <script src="Bootstrap/jquery-1.12.0.min.js"></script>
-        <!-- Bootstrap JS -->
-        <script src="Bootstrap/js-bootstrap.min.js"></script>
+    </div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="Bootstrap/jquery-1.12.0.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="Bootstrap/js-bootstrap.min.js"></script>
 
-        <script type="text/javascript">
-            $(document).ready(function () {
-                $('#sidebarCollapse').on('click', function () {
-                    $('#sidebar').toggleClass('active');
-                });
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
             });
-        </script>
+        });
+    </script>
 </body>
 
 </html>
