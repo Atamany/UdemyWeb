@@ -1,5 +1,6 @@
 <h1> 🚀 UdemyWeb Öğrenci Bilgi Sistemi (OBS) </h1>
 <h3>-ASP.NET MVC ile hazırlanmış, Admin/Öğrenci/Öğretmen panelleri olan, Oturum yönetimi ile güvenlik ve kişiselleştirilmiş bir deneyim sağlayan, bir Öğrenci Bilgi Sistemi Projesi.</h3>
+<p> 🏷️ Murat Yücedağ tarafından Udemy eğitim platformunda yayınlanan "Asp.Net Bootstrap ile SQL Tabanlı Web Projeleri Geliştirin!" eğitimi kapsamında tamamladığım 1. proje.</p>
 <br />
 
 <h4>Giriş Ekranı</h4>
